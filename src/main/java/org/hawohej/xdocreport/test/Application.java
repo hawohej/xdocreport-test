@@ -32,7 +32,6 @@ public class Application {
             DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd_hh-mm-ss");
             String fileName = String.format("src/main/resources/generated/template_%s.docx", LocalDateTime.now().format(dateTimeFormat));
             var file = new File(fileName);
-            file.createNewFile();
             OutputStream out = new FileOutputStream(file);
             templateReport.process(reportContext, out);
 
